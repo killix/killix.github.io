@@ -30,7 +30,7 @@ jobs:
             - "*"
   deploy:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:lts-stretch
     steps:
       - checkout
       - run:
@@ -49,10 +49,10 @@ jobs:
           command: |
             git config --global user.name "Circle CI"
             git config --global user.email "bot@circleci.com"
-            sh orchestration/deploy.sh
+            cp orchestration/deploy.sh deploy.sh && chmod 755 deploy.sh && sh deploy.sh
   verify:
     docker:
-      - image: circleci/node:10
+      - image: circleci/node:lts-stretch
     steps:
       - run:
           name: Install BLC
