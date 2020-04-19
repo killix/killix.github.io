@@ -59,7 +59,7 @@ jobs:
           command: sudo npm install -g broken-link-checker
       - run:
           name: Check broken internal links
-          command: blc https://e.printstacktrace.blog -roe
+          command: blc https://www.iss.am -roe
 
 workflows:
   version: 2
