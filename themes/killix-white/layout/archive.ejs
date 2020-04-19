@@ -1,0 +1,25 @@
+<div id="archive">
+  <ul class="post-list">
+    <% var prevCategory = 0 %>
+    <% var change = false %>
+    <% var postGrouped = {} %>
+    <% page.posts
+        .filter(function(post) { return post.category})
+        .sort('date', 'desc')
+        .each(function(post) {
+          postGrouped[post.category] = postGrouped[post.category] || [];
+          postGrouped[post.category].push(post);
+        }); %>
+
+    <% Object.keys(postGrouped).forEach(function(key) { %>
+      <h2><%= key %></h2>
+      <% (postGrouped[key] || []).forEach(function(post) { %>
+        <li class="post-item">
+          <%- partial('_partial/post/icon', { post: post, class_name: 'icon' }) %>
+          <span><%- partial('_partial/post/title', { post: post, index: true, class_name: '' }) %><span>
+        </li>      
+      <% }); %>
+    <% }); %>
+  </ul>
+  <%- partial('_partial/pagination') %>
+</div>

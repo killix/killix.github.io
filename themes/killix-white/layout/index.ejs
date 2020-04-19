@@ -1,0 +1,15 @@
+<section id="writing">  
+  <p>I'm Issam Hakimi aka <a href="/about/me.html">Killix</a>.</p>
+  <p>I'm an Hacker & an Builder.</p>
+  <p>Sometimes I <a href="/archives/">write</a>.</p>
+  <p style="display: inline">
+    <% if (theme.customize.social_links) { %>
+      Find me on
+      <ul id="socialinfo">
+        <% for(var i in theme.customize.social_links) { %>
+          <li><a class="icon" target="_blank" href="<%- url_for(theme.customize.social_links[i]) %>"><i class="fa fa-<%= i %>"></i></a></li>
+        <% } %>
+      </ul>.
+    <% } %>
+  </p>
+</section>
