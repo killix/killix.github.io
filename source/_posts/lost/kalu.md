@@ -2,7 +2,7 @@
 title: Kalu
 layout: post
 date: 2021-08-11 13:26:16
-category: /missing/kalu
+category: /lost/kalu
 ---
 
 **Kalu** is lost and you have found her!
